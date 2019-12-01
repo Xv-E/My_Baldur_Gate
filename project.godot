@@ -1,0 +1,162 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Aoe_Area",
+"language": "GDScript",
+"path": "res://skills/item/Aoe_Area.gd"
+}, {
+"base": "D_skill",
+"class": "Attack",
+"language": "GDScript",
+"path": "res://skills/Attack.gd"
+}, {
+"base": "Reference",
+"class": "Attribute",
+"language": "GDScript",
+"path": "res://character/Attribute.gd"
+}, {
+"base": "Node2D",
+"class": "Buff",
+"language": "GDScript",
+"path": "res://buffs/Buff.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Character",
+"language": "GDScript",
+"path": "res://character/Character.gd"
+}, {
+"base": "Node2D",
+"class": "Chest",
+"language": "GDScript",
+"path": "res://item_system/Chest.gd"
+}, {
+"base": "UD_skill",
+"class": "Cut",
+"language": "GDScript",
+"path": "res://skills/Cut.gd"
+}, {
+"base": "Skill",
+"class": "D_skill",
+"language": "GDScript",
+"path": "res://skills/D_skill.gd"
+}, {
+"base": "Item",
+"class": "Drug",
+"language": "GDScript",
+"path": "res://item_system/items/Drug.gd"
+}, {
+"base": "Reference",
+"class": "Effect",
+"language": "GDScript",
+"path": "res://character/Effect.gd"
+}, {
+"base": "Item",
+"class": "Equipment",
+"language": "GDScript",
+"path": "res://item_system/items/Equipment.gd"
+}, {
+"base": "Node",
+"class": "Item",
+"language": "GDScript",
+"path": "res://item_system/items/Item.gd"
+}, {
+"base": "TextureRect",
+"class": "ItemSlot",
+"language": "GDScript",
+"path": "res://item_system/ItemSlot.gd"
+}, {
+"base": "Node2D",
+"class": "Item_Bar",
+"language": "GDScript",
+"path": "res://item_system/Item_Bar.gd"
+}, {
+"base": "Node2D",
+"class": "Missile",
+"language": "GDScript",
+"path": "res://skills/item/Missile.gd"
+}, {
+"base": "D_skill",
+"class": "Pick_Item",
+"language": "GDScript",
+"path": "res://skills/Pick_Item.gd"
+}, {
+"base": "Node2D",
+"class": "Skill",
+"language": "GDScript",
+"path": "res://skills/Skill.gd"
+}, {
+"base": "TextureButton",
+"class": "SkillButton",
+"language": "GDScript",
+"path": "res://skills/skill_button.gd"
+}, {
+"base": "Sprite",
+"class": "Skill_pointer",
+"language": "GDScript",
+"path": "res://skills/Skill_pointer.gd"
+}, {
+"base": "Buff",
+"class": "Strong",
+"language": "GDScript",
+"path": "res://buffs/Strong.gd"
+}, {
+"base": "Skill",
+"class": "UD_skill",
+"language": "GDScript",
+"path": "res://skills/UD_skill.gd"
+} ]
+_global_script_class_icons={
+"Aoe_Area": "",
+"Attack": "",
+"Attribute": "",
+"Buff": "",
+"Character": "",
+"Chest": "",
+"Cut": "",
+"D_skill": "",
+"Drug": "",
+"Effect": "",
+"Equipment": "",
+"Item": "",
+"ItemSlot": "",
+"Item_Bar": "",
+"Missile": "",
+"Pick_Item": "",
+"Skill": "",
+"SkillButton": "",
+"Skill_pointer": "",
+"Strong": "",
+"UD_skill": ""
+}
+
+[application]
+
+config/name="rpg"
+run/main_scene="res://scene/test.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="rpg"
+config/icon="res://icon.png"
+
+[autoload]
+
+global="*res://global.gd"
+MainCanvas="*res://UI/MainCanvas.tscn"
+Classify="*res://Classify.gd"
+Item_Manager="*res://item_system/Item_Manager.gd"
+
+[locale]
+
+locale_filter=[ 0, [  ] ]
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

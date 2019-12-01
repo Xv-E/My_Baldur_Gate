@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+pause_mode = 2
+visible = false
+position = Vector2( 510, 300 )
+current = true
+zoom = Vector2( 1, 1.7 )
+smoothing_enabled = true
