@@ -2,9 +2,12 @@ extends Node2D
 
 class_name Chest
 
-var itemlist = []
+var itemlist = Array()
 var radius = 0
+var count = 72
+
 func _ready():
+	itemlist.resize(count)
 	pass
 
 func _on_Area2D_mouse_entered():

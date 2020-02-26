@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=2]
 
-[ext_resource path="res:// special_effects/buff_se.gd" type="Script" id=1]
+[ext_resource path="res://special_effects/buff_se.gd" type="Script" id=1]
 [ext_resource path="res://art/b_BUFF/0002/0.png" type="Texture" id=2]
 [ext_resource path="res://art/b_BUFF/0002/1.png" type="Texture" id=3]
 [ext_resource path="res://art/b_BUFF/0002/2.png" type="Texture" id=4]
@@ -38,6 +38,6 @@ script = ExtResource( 1 )
 position = Vector2( 0, -40 )
 frames = SubResource( 1 )
 animation = "circle1"
-frame = 1
+frame = 9
 speed_scale = 2.0
 playing = true

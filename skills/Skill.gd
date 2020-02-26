@@ -5,7 +5,7 @@ class_name Skill
 
 signal cancel
 
-var skill_se = preload("res:// special_effects/skill_se.tscn")
+var skill_se = preload("res://special_effects/skill_se.tscn")
 var SE
 
 var icon = preload("res://icon.png")

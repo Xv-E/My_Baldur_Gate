@@ -13,5 +13,5 @@ func _ready():
 	c_state = "cast"
 	
 func launch():
-	effect.damage = s_owner.attr.ATK
+	effect.damage = s_owner.attr.attr_list["ATK"]
 	Effect.affect(to,effect)

@@ -6,15 +6,15 @@ var attr:Attribute
 var need:Attribute
 var effect:Effect
 
-enum equipment_type{
-	weapon,
-	helmet,
-	armor,
-	leggings,
-	shoes,
-	ring,
-	necklace
-	}
+#enum equipment_type{
+#	weapon,
+#	helmet,
+#	armor,
+#	leggings,
+#	shoes,
+#	ring,
+#	necklace
+#	}
 	
 var eqm_type
 
@@ -23,41 +23,34 @@ func _init():
 	need = Attribute.new()
 	effect = Effect.new()
 
-func used(character):
-	character.equipments
-
-func load_item_data(path):
-	var file = File.new()
-	if not file.file_exists(path):
-		return
-	file.open(path, File.READ)
-	var item_date =JSON.parse(file.get_as_text()).get_result() 
-	file.close()
-	# 非法json字符串
-	if !item_date:
-		return
+func used(character=item_owner):
+	character.equipments[eqm_type] = self
+	Effect.affect(character,effect)
+	character.update_attr()
 	
-	item_name = item_date["name"]
-	item_icon = item_date["texture"]
-	item_type = item_date["type"]
-	eqm_type = item_date["eqm_type"]
+	
+func load_item_data(item_data):
+	item_name = item_data["name"]
+	item_icon = item_data["texture"]
+	item_type = item_data["type"]
+	eqm_type = item_data["eqm_type"]
 		
 	#设置要求属性
-	if item_date["need"]:
-		for i in item_date["need"].keys():
-			need.set(i,item_date["need"][i])
+	if item_data["need"]:
+		for i in item_data["need"].keys():
+			need.set(i,item_data["need"][i])
 	
 	#设置基本属性
-	if item_date["attr"]:
-		for i in item_date["attr"].keys():
-			attr.set(i,item_date["attr"][i])
+	if item_data["attr"]:
+		for i in item_data["attr"].keys():
+			attr.set(i,item_data["attr"][i])
 			
 	#effect用于设置buff
-	if item_date["effect"]:
-		for i in item_date["effect"].keys():
+	if item_data["effect"]:
+		for i in item_data["effect"].keys():
 			if i != "buffs":
-				effect.set(i,item_date["effect"][i])
+				effect.set(i,item_data["effect"][i])
 			else:
-				for b in item_date["effect"]["buffs"]:
+				for b in item_data["effect"]["buffs"]:
 					effect.buffs.append(load(buffs_path+b+".gd").new())
-
+					

@@ -18,17 +18,18 @@ func open_ib(flag,node,itemlist=null):
 	if itemlist==null:
 		itemlist = node.itemlist
 	var ib = item_bar.instance()
+	ib.b_owner = node
 	MainCanvas.add_child(ib)
 	ib.set_items(itemlist)
 	ib.b_owner = node
 	if flag == 1:
 		close_ib(hero_ib)
 		hero_ib = ib
-		ib.position = Vector2(700,100)
+		ib.set_position(Vector2(700,100))
 	elif flag == 0:
 		close_ib(trade_ib)
 		trade_ib = ib
-		ib.position = Vector2(100,100)
+		ib.set_position(Vector2(100,100))
 	
 func find_hover_slot():
 	if hero_ib:
